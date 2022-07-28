@@ -3,7 +3,7 @@
     <button
       mat-icon-button
       class="example-icon"
-      [matMenuTriggerFor]="vertebrates"
+      [matMenuTriggerFor]="general"
       aria-label="Example icon-button with menu icon"
     >
       <mat-icon>menu</mat-icon>
@@ -14,12 +14,12 @@
   </mat-toolbar>
 </p>
 
-<mat-menu #vertebrates="matMenu">
+<mat-menu #general="matMenu">
   <div *ngFor="let prod of products">
-    <button mat-menu-item [matMenuTriggerFor]="vertebra">
+    <button mat-menu-item [matMenuTriggerFor]="name">
       {{ prod.name }}
     </button>
-    <mat-menu #vertebra="matMenu">
+    <mat-menu #name="matMenu">
       <button mat-menu-item [matMenuTriggerFor]="id">ID</button>
       <button mat-menu-item [matMenuTriggerFor]="parentid">ParentId</button>
     </mat-menu>
