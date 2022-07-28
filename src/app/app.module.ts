@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MenuComponent } from './menu/menu.component';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [	
+    AppComponent,
+      MenuComponent
+   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

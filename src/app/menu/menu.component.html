@@ -1,0 +1,36 @@
+<p>
+  <mat-toolbar color="secondary">
+    <button
+      mat-icon-button
+      class="example-icon"
+      [matMenuTriggerFor]="vertebrates"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Menu</span>
+
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</p>
+
+<mat-menu #vertebrates="matMenu">
+  <div *ngFor="let prod of products">
+    <button mat-menu-item [matMenuTriggerFor]="vertebra">
+      {{ prod.name }}
+    </button>
+    <mat-menu #vertebra="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="id">ID</button>
+      <button mat-menu-item [matMenuTriggerFor]="parentid">ParentId</button>
+    </mat-menu>
+    <mat-menu #id="matMenu">
+      <button mat-menu-item>{{ prod.id }}</button>
+    </mat-menu>
+    <mat-menu #parentid="matMenu">
+      <button *ngIf="prod.parentId !== null" mat-menu-item>
+        {{ prod.parentId }}
+      </button>
+      <button *ngIf="prod.parentId === null" mat-menu-item>Sin definir</button>
+    </mat-menu>
+  </div>
+</mat-menu>
